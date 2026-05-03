@@ -1,9 +1,11 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
-import { personalInfo } from "../data/portfolioData";
+import { personalInfo, socialLinks } from "../data/portfolioData";
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  const socialEntries = Object.entries(socialLinks);
+
   return (
     <section
       id="contact"
@@ -24,17 +26,48 @@ const Contact = () => {
           Get In Touch
         </h2>
         <p className="text-text-secondary text-lg mb-10 leading-relaxed">
-          I am currently looking for new opportunities and my inbox is always
-          open. Whether you have a question or just want to say hi, I'll try my
-          best to get back to you!
+          I am actively seeking new opportunities and am open to connecting with like-minded professionals. Whether you have a question or would like to discuss potential collaborations, feel free to reach out—I’d be happy to connect.
         </p>
 
         <a
-          href={`mailto:${personalInfo.email}`}
+          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email || "asadraiyan001@gmail.com"}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block px-10 py-4 border-2 border-accent-1 text-accent-1 font-bold rounded-md hover:bg-accent-1/10 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-accent-1/20"
         >
           Say Hello
         </a>
+
+        {/* Social Links Section */}
+        <div className="mt-14">
+          <p className="text-text-secondary text-sm font-mono mb-6 tracking-widest uppercase">
+            Find me on
+          </p>
+          <div className="flex items-center justify-center gap-5">
+            {socialEntries.map(([key, { url, icon }], index) => (
+              <motion.a
+                key={key}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={key}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                whileHover={{ y: -4, scale: 1.15 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative w-12 h-12 flex items-center justify-center rounded-lg bg-primary-bg/60 border border-white/5 text-text-secondary hover:text-accent-1 hover:border-accent-1/40 hover:bg-accent-1/10 hover:shadow-lg hover:shadow-accent-1/10 transition-all duration-300"
+              >
+                {icon}
+                {/* Tooltip */}
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-mono text-accent-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap capitalize pointer-events-none">
+                  {key}
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
       </motion.div>
     </section>
   );

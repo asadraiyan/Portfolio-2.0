@@ -9,7 +9,10 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJava,
+  FaInstagram,
+  FaFacebook,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   SiExpress,
   SiMongodb,
@@ -36,27 +39,6 @@ export const personalInfo = {
   bio: "Innovative Frontend Developer crafting seamless and high-performance web experiences. With 4+ years of experience in React.js, Next.js and modern JavaScript ecosystems, I specialize in building scalable, user-centric interfaces. I thrive in collaborative environments, translating complex ideas into intuitive digital solutions while maintaining a strong focus on performance, usability, and clean code.",
   shortBio: "I build things for the web.",
 };
-
-export const education = [
-  {
-    institution: "Chandigarh University",
-    degree: "Bachelor of Engineering in Computer Science",
-    duration: "Aug 2023 – Present",
-    score: "CGPA: 8.04/10",
-  },
-  {
-    institution: "Namdev Public School",
-    degree: "Class 12th CBSE",
-    duration: "April 2022 - May 2023",
-    score: "96.5%",
-  },
-  {
-    institution: "Namdev Public School",
-    degree: "Class 10th CBSE",
-    duration: "April 2020 - May 2021",
-    score: "95.17%",
-  },
-];
 
 export const projects = [
   {
@@ -85,6 +67,31 @@ export const projects = [
     image: "/moviflix.png",
   },
   {
+    title: "Annihilators",
+    tech: ["React.js, Node.js, Express.js, MongoDB"],
+    description: [
+      <>
+        Developed{" "}
+        <span className="text-text-primary font-medium">
+          Annihilators, a full-stack MERN cricket application
+        </span>{" "}
+        enabling users to explore detailed player statistics and cricket-related data.
+      </>,
+      <>
+        Implemented features such as{" "}
+        <span className="text-text-primary font-medium">
+          team selection, user profiles, and dynamic data rendering
+        </span>{" "}
+        to provide a comprehensive and interactive cricket management experience.
+      </>,
+    ],
+    githubLink: "https://github.com/Annihilators-lucknow",
+    liveLink: "https://beta-annihilators.netlify.app/",
+    category: "Frontend",
+    icon: <FaCode size={24} className="text-accent-1" />,
+    image: "cricket.png",
+  },
+  {
     title: "Unique Collection",
     tech: ["React.js"],
     description: [
@@ -109,31 +116,7 @@ export const projects = [
     icon: <FaCode size={24} className="text-accent-1" />,
     image: "unique.png",
   },
-    {
-    title: "Annihilators",
-    tech: ["React.js, Node.js, Express.js, MongoDB"],
-   description: [
-  <>
-    Developed{" "}
-    <span className="text-text-primary font-medium">
-      Annihilators, a full-stack MERN cricket application
-    </span>{" "}
-    enabling users to explore detailed player statistics and cricket-related data.
-  </>,
-  <>
-    Implemented features such as{" "}
-    <span className="text-text-primary font-medium">
-      team selection, user profiles, and dynamic data rendering
-    </span>{" "}
-    to provide a comprehensive and interactive cricket management experience.
-  </>,
-],
-    githubLink: "https://github.com/Annihilators-lucknow",
-    liveLink: "https://beta-annihilators.netlify.app/",
-    category: "Frontend",
-    icon: <FaCode size={24} className="text-accent-1" />,
-    image: "cricket.png",
-  },
+
 ];
 
 export const skills = {
@@ -148,23 +131,25 @@ export const skills = {
     { name: "Next JS", icon: <SiNextdotjs /> },
     { name: "Node JS", icon: <FaNodeJs /> },
     { name: "Express JS", icon: <SiExpress /> },
-    { name: "React Native", icon: <FaReact /> },
   ],
   toolsAndPlatforms: [
     { name: "Git & GitHub", icon: <FaGithub /> },
     { name: "MongoDB", icon: <SiMongodb /> },
-    { name: "n8n", icon: <FaCode /> },
     { name: "NPM", icon: <SiNpm /> },
     { name: "Postman", icon: <SiPostman /> },
     { name: "Figma", icon: <SiFigma /> },
   ],
   coreCompetencies: [
-    "Presentations",
-    "Oratory",
-    "Team Leadership",
-    "Event Hosting",
-    "Agile Methodologies",
-    "Problem Solving",
+    "Frontend Architecture (React.js)",
+    "JavaScript (ES6+) & TypeScript",
+    "Reusable Component Design",
+    "State Management (Redux, Context API)",
+    "Performance Optimization & Lazy Loading",
+    "API Integration & Error Handling",
+    "Responsive & Mobile-First Design",
+    "Code Quality, Testing & Best Practices",
+    "Git, CI/CD & Version Control",
+    "Agile Development & Team Collaboration",
   ],
 };
 
@@ -198,8 +183,20 @@ export const experience = [
 export const socialLinks = {
   linkedin: { url: personalInfo.linkedin, icon: <FaLinkedin size={24} /> },
   github: { url: personalInfo.github, icon: <FaGithub size={24} /> },
+  instagram: {
+    url: "https://www.instagram.com/asad.raiyan/?igshid=ZDdkNTZiNTM%3D",
+    icon: <FaInstagram size={24} />,
+  },
+  facebook: {
+    url: "https://m.facebook.com/asad.raiyan?mibextid=ZbWKwL",
+    icon: <FaFacebook size={24} />,
+  },
+  twitter: {
+    url: "https://twitter.com/raiyan_asad?t=vzNMJaOErNJDbeT5XjOR4A&s=09",
+    icon: <FaXTwitter size={24} />,
+  },
   email: {
-    url: `mailto:${personalInfo.email}`,
+    url: `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email || "asadraiyan001@gmail.com"}`,
     icon: <FaEnvelope size={24} />,
   },
 };

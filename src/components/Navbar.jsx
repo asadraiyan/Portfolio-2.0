@@ -26,11 +26,10 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-4 left-0 right-0 z-50 mx-auto w-[95%] max-w-6xl rounded-md transition-all duration-300 ${
-        scrolled
-          ? "bg-secondary-bg/20 backdrop-blur-lg border border-white/5 shadow-lg shadow-black/5" // Increased translucency (20%)
-          : "bg-transparent backdrop-blur-none border-transparent"
-      }`}
+      className={`fixed top-4 left-0 right-0 z-50 mx-auto w-[95%] max-w-6xl rounded-md transition-all duration-300 ${scrolled
+        ? "bg-secondary-bg/20 backdrop-blur-lg border border-white/5 shadow-lg shadow-black/5" // Increased translucency (20%)
+        : "bg-transparent backdrop-blur-none border-transparent"
+        }`}
     >
       <div className="px-6 h-16 flex justify-between items-center">
         {/* Logo - Scrolls to Top */}
@@ -102,7 +101,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="/AditiAryaResume.pdf"
+                href="/Asad_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 text-sm font-bold text-accent-1 border border-accent-1 rounded hover:bg-accent-1 hover:text-primary-bg transition-colors"
